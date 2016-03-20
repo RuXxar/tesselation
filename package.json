@@ -1,0 +1,31 @@
+{
+  "name": "tesselation",
+  "version": "0.0.0",
+  "description": "A library for creating masonry",
+  "author": "Djamel Adjou <ruxxar@gmail.com>",
+  "contributors": [
+    {
+      "name": "Djamel Adjou",
+      "email": "ruxxar@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ruxxar/tesselation"
+  },
+  "bugs": {
+    "url": "https://github.com/ruxxar/tesselation/issues"
+  },
+  "keywords": [
+    "masonry",
+    "tesselation"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "webpack": "^1.12.14"
+  },
+  "private": true,
+  "analyze": true,
+  "license": "Apache 2.0"
+}
