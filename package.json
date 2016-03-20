@@ -23,6 +23,7 @@
   "dependencies": {},
   "devDependencies": {
     "gulp": "^3.9.1",
+    "riot": "^2.3.17",
     "webpack": "^1.12.14"
   },
   "private": true,

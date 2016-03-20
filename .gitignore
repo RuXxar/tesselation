@@ -1,7 +1,9 @@
 *.csproj
 *.sln
 *.suo
-*.config
+web.config
+web.debug.config
+web.release.config
 /bin
 /obj
 /node_modules
