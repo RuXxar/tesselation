@@ -1,13 +1,12 @@
 var path = require("path");
+var webpack = require('webpack');
 
 module.exports = {
-	context: __dirname,
 	entry: "./app/bundle.ts",
 	output: {
-		path: path.join(__dirname, "assets"),
-		publicPath: "assets/", // relative path for github pages
+		path: path.resolve(__dirname, "assets"),
+		publicPath: "/host/", // relative path for github pages
 		filename: "main.js", // no hash in main.js because index.html is a static page
-		chunkFilename: "[hash]/js/[id].js",
 	},
 	module: {
 	  preLoaders: [
@@ -27,5 +26,10 @@ module.exports = {
 	resolve: {
 		root: [path.resolve('./app')],
 		extensions: ['', '.webpack.js', '.web.js', '.ts', '.js']
-	}
+	},
+	plugins: [
+		new webpack.ProvidePlugin({
+			riot: 'riot'
+		})
+	]
 };

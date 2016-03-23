@@ -1,8 +1,5 @@
 <tesselation-row>
   <div>
-    Heres stuff
+    <yield from="images" />
   </div>
-
-
-
 </tesselation-row>

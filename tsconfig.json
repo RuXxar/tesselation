@@ -4,6 +4,9 @@
     "sourceMap": true,
     "module": "commonjs"
   },
+  "files": [
+    "typings/main.d.ts"
+  ],
   "exclude": [
     "node_modules"
   ]

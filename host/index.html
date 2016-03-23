@@ -4,13 +4,22 @@
 <head>
     <meta charset="utf-8" />
     <title>TypeScript HTML App</title>
-    <link rel="stylesheet" href="app.css" type="text/css" />
-    <script src="app.js"></script>
+    <link rel="stylesheet" href="main.css" type="text/css" />
+    <script src="http://localhost:8080/main.js"></script>
 </head>
 <body>
     <h1>TypeScript HTML App</h1>
 
-	<tesselation-row></tesselation-row>
+	<tesselation-row>
+        <yield to="images">
+            <img src="http://lorempixel.com/400/200">
+            <img src="http://lorempixel.com/g/400/200">
+            <img src="http://lorempixel.com/300/200">
+            <img src="http://lorempixel.com/g/200/300">
+            <img src="http://lorempixel.com/100/200">
+            <img src="http://lorempixel.com/300/300">
+        </yield>
+    </tesselation-row>
 
 </body>
 </html>
