@@ -10,6 +10,11 @@ function getTesselationTags() {
 
 export function mountTags() {
   getTesselationTags().forEach((tag: any) => {
-	riot.mount(tag);
+    var yieldElement = document.createElement('yield');
+    yieldElement.setAttribute('to','grid');
+    let tagInnerContent = tag.innerHTML;
+    yieldElement.innerHTML = tagInnerContent;
+    tag.innerHTML = yieldElement.outerHTML;
+	  riot.mount(tag);
   })
 }
