@@ -1,28 +1,14 @@
 // Load plugins
 var gulp = require('gulp'),
 		gutil = require("gulp-util"),
-    autoprefixer = require('gulp-autoprefixer'),
-    minifycss = require('gulp-minify-css'),
     rename = require('gulp-rename'),
     clean = require('gulp-clean'),
     WebpackDevServer = require("webpack-dev-server"),
 		webpack = require('webpack');
 
-// Styles
-gulp.task('styles', function () {
-	return gulp.src('app/scss/main.scss')
-    .pipe(sass({ style: 'expanded', }))
-    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-    .pipe(gulp.dest('dist/styles'))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(minifycss())
-    .pipe(gulp.dest('dist/styles'))
-    .pipe(notify({ message: 'Styles task complete' }));
-});
-
 // Clean
 gulp.task('clean', function () {
-	return gulp.src(['dist/styles', 'dist/scripts', 'dist/images'], { read: false })
+	return gulp.src(['dist/scripts'], { read: false })
     .pipe(clean());
 });
 
@@ -34,7 +20,12 @@ gulp.task('default', ['clean'], function () {
 var webpackConfig = require('./webpack.config.js');
 
 function webpackCompile() {
-	return webpack(webpackConfig);
+	return webpack(webpackConfig, function(err, stats) {
+		if(err) throw new gutil.PluginError("webpack", err);
+		gutil.log("[webpack]", stats.toString({
+			// output options
+		}));
+	});
 }
 
 gulp.task("webpack-dev-server", function (callback) {
@@ -54,12 +45,6 @@ gulp.task("webpack-dev-server", function (callback) {
 
 // Watch
 gulp.task('watch', function () {
-	// Watch .scss files
-	gulp.watch('app/scss/**/*.scss', function (event) {
-		console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
-		gulp.run('styles');
-	});
-
 	// Watch .ts files
 	gulp.watch(['app/**/*.ts'], function (event) {
 		console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');

@@ -3,8 +3,9 @@ var webpack = require('webpack');
 
 module.exports = {
 	entry: "./app/bundle.ts",
+	devtools: 'inline-source-map',
 	output: {
-		path: path.resolve(__dirname, "assets"),
+		path: path.resolve(__dirname, "dist"),
 		publicPath: "/host/", // relative path for github pages
 		filename: "main.js", // no hash in main.js because index.html is a static page
 	},

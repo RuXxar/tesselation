@@ -1,10 +1,10 @@
 'use strict';
 
-import './tags/row/row.tag';
-
+import './tags/grid/grid.tag';
 import TagsApi = require('./api/tagsApi');
+import imagesLoaded = require('services/imagesloaded');
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("mounting tags");
- TagsApi.mountTags();
+  imagesLoaded();
+  TagsApi.mountTags();
 });
