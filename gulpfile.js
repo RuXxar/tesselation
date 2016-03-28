@@ -51,3 +51,7 @@ gulp.task('watch', function () {
 		webpackCompile();
 	});
 });
+
+gulp.task('build', function () {
+	webpackCompile();
+});

@@ -7,7 +7,7 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, "dist"),
 		publicPath: "/host/", // relative path for github pages
-		filename: "main.js", // no hash in main.js because index.html is a static page
+		filename: "main.js" // no hash in main.js because index.html is a static page
 	},
 	module: {
 	  preLoaders: [

@@ -2,7 +2,9 @@
 *.sln
 *.suo
 *.config
+*.iml
 .idea/
 /bin
 /obj
+/dist
 /node_modules
